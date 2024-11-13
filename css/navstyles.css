@@ -10,7 +10,7 @@ body{
 #main-header{
     background-color: rgb(34,33,32);
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: flex-end;
     padding: 0pt;
     border-bottom: 1pt solid brown;
@@ -18,7 +18,7 @@ body{
 }
 
 #main-header #mainheaderlogo{
-    width: 100pt;
+    width: 80pt;
     transition: all ease 0.3s;
     padding: 2pt 15pt 0pt;
 }
@@ -26,7 +26,6 @@ body{
 #main-header #mainheaderlogo:hover{
     opacity: 50%;
     width: 104pt;
-    /* max-width: 80pt; */
     padding: 0pt 13pt;
 }
 
@@ -34,10 +33,11 @@ body{
     display: flex;
     gap: 1vw;
     margin-right: 2vw;
+    margin-left: auto;  /* Pushes #socials to the right */
 }
 
 #main-header #socials img{
-    max-width: 20pt;
+    max-width: 40pt;
     transition: all ease 0.3s;
 }
 
@@ -54,7 +54,8 @@ body{
     padding: 0pt;
     list-style-type: none;
     display: flex;
-    gap: 0pt;
+    align-items: left;
+    gap: 10pt;
     transition: all ease .4s
 }
 
@@ -62,16 +63,15 @@ body{
     text-decoration: none;
     color: snow;
     text-transform: uppercase;
-    /* font-weight: bold; */
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     display: block;
     transition: all ease .4s;
     padding: 0pt 10pt;
-    border-radius: 2pt;
+    border-radius: 3pt 3pt 0 0;
 }
 
 #main-header ul a:hover{
-    background-color: brown;
+    background-color: rgb(115 31 23);
     color: snow;
 }
 

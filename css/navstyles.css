@@ -1,0 +1,132 @@
+html{
+    font-size: 14pt;
+}
+
+body{
+    margin: 0pt;
+    background-color: rgb(30,30,30);
+}
+
+#main-header{
+    background-color: rgb(34,33,32);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0pt;
+    border-bottom: 1pt solid brown;
+    box-shadow: 0 0 10pt rgb(0, 0, 0.2);
+}
+
+#main-header #mainheaderlogo{
+    width: 100pt;
+    transition: all ease 0.3s;
+    padding: 2pt 15pt 0pt;
+}
+
+#main-header #mainheaderlogo:hover{
+    opacity: 50%;
+    width: 104pt;
+    /* max-width: 80pt; */
+    padding: 0pt 13pt;
+}
+
+#main-header #socials {
+    display: flex;
+    gap: 1vw;
+    margin-right: 2vw;
+}
+
+#main-header #socials img{
+    max-width: 20pt;
+    transition: all ease 0.3s;
+}
+
+#main-header #socials a{
+    text-decoration: none;
+}
+
+#main-header #socials a:hover{
+    opacity: 50%;
+}
+
+#main-header ul{
+    margin: 0pt;
+    padding: 0pt;
+    list-style-type: none;
+    display: flex;
+    gap: 0pt;
+    transition: all ease .4s
+}
+
+#main-header ul a{
+    text-decoration: none;
+    color: snow;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    font-size: 0.8rem;
+    display: block;
+    transition: all ease .4s;
+    padding: 0pt 10pt;
+    border-radius: 2pt;
+}
+
+#main-header ul a:hover{
+    background-color: brown;
+    color: snow;
+}
+
+#dropdown-menu {
+    display: none;
+
+}
+
+/* Media Query for small screens */
+@media (max-width: 670pt) {
+    #main-header ul {
+        display: none;  /* Hide the list on small screens */
+    }
+    #dropdown-menu {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: snow;
+        position: absolute;
+        top: 50px;  /* Adjust as needed */
+        left: 10px;  /* Adjust as needed */
+        box-shadow: 0 2pt 10pt rgba(0, 0, 0, 0.1);
+        padding: 10pt;
+    }
+    #dropdown-menu.show {
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+    }
+    #dropdown-menu a {
+        padding: 10pt;
+        color: #444;
+        text-decoration: none;
+    }
+    #dropdown-menu a:hover {
+        background-color: brown;
+        color: snow;
+    }
+    #hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: relative;
+    }
+    #hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #444;
+        margin: 4pt 0;
+        transition: all 0.3s ease;
+    }
+    #hamburger:hover + #dropdown-menu, 
+    #dropdown-menu:hover {
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+    }
+}

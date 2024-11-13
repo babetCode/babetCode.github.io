@@ -20,13 +20,13 @@ body{
 #main-header #mainheaderlogo{
     width: 80pt;
     transition: all ease 0.3s;
-    padding: 2pt 30pt 0pt;
+    padding: 1.5pt 30pt;
 }
 
 #main-header #mainheaderlogo:hover{
-    opacity: 50%;
-    width: 104pt;
-    padding: 0pt 13pt;
+    opacity: 90%;
+    width: 86pt;
+    padding: 0pt 27pt;
 }
 
 #main-header #socials {
@@ -67,7 +67,7 @@ body{
     display: block;
     transition: all ease .4s;
     padding: 0 8vw;
-    border-radius: 3pt 3pt 0 0;
+    border-radius: 20pt 20pt 0 0;
 }
 
 #main-header ul a:hover{

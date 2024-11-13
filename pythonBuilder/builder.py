@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrien's Homepage</title>
-    <link rel="stylesheet" href="css/navstyles.css">
-    <link rel="stylesheet" href="css/pagestyles.css">
-</head>
-<body>
-    <header id="main-header">
+def build_header(header_logo, page_names):
+    base_text = """<header id="main-header">
         <a href="#">
             <img src="images/AdrienWebLogo.png" alt="logo" id="mainheaderlogo">
         </a>
@@ -27,10 +18,10 @@
         </div>
         <ul>
             <li>
-                <a href="html/projects.html">Projects</a>
+                <a href="html/aboutpage.html">Projects</a>
             </li>
             <li>
-                <a href="html/skills.html">Skills</a>
+                <a href="html/menupage.html">Skills</a>
             </li>
         </ul>
         <div id="socials">
@@ -41,15 +32,7 @@
                 <img src="images/instagram.png" alt="instagram">
             </a>
         </div>
-    </header>
-    <img src="images/HeadShotB.PNG" alt="img" id="hero">
-    <p id="hs-caption">
-        Adrien Babet <br>
-        Kinesiology @ MSU
-    </p>
-    <p id="bio">
-        I know kinesiology doesn't make you think "programmer", but<br>
-        I like computers, so here's some stuff I did for fun.
-    </p>
-</body>
-</html>
+    </header>"""
+    print(base_text)
+    return 1
+build_header(1,1)

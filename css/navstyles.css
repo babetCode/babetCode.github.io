@@ -22,13 +22,18 @@ body{
 #main-header #mainheaderlogo{
     width: 80pt;
     transition: all ease 0.3s;
-    padding: 1.5pt 30pt;
+    padding: 7pt 30pt 0 30pt;
 }
 
 #main-header #mainheaderlogo:hover{
     opacity: 90%;
     width: 86pt;
-    padding: 0pt 27pt;
+    padding: 4pt 27pt 0 27pt;
+}
+
+#main-header #mainheaderlogo img{
+    border: 1pt solid;
+    border-color: snow;
 }
 
 /* SOCIALS
@@ -68,7 +73,6 @@ margin-left displays them to the right */
     text-decoration: none;
     color: snow;
     text-transform: uppercase;
-    font-size: 1.5rem;
     display: block;
     transition: all ease .4s;
     padding: 0 8vw;
@@ -76,8 +80,11 @@ margin-left displays them to the right */
 }
 
 #main-header ul a:hover{
-    background-color: rgb(115 31 23);
-    color: snow;
+    background-color: black;
+}
+
+.active{
+    background-color: black;
 }
 
 #dropdown-menu {

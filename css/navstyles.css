@@ -20,7 +20,7 @@ body{
 #main-header #mainheaderlogo{
     width: 80pt;
     transition: all ease 0.3s;
-    padding: 2pt 15pt 0pt;
+    padding: 2pt 30pt 0pt;
 }
 
 #main-header #mainheaderlogo:hover{
@@ -66,7 +66,7 @@ body{
     font-size: 1.5rem;
     display: block;
     transition: all ease .4s;
-    padding: 0pt 10pt;
+    padding: 0 8vw;
     border-radius: 3pt 3pt 0 0;
 }
 

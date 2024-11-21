@@ -45,8 +45,7 @@ html, body {
     padding-left: 15pt;
 }
 
-#projects-description {
-    font-size: 1.5rem;
+.projects-description {
     font-weight: bold;
     color: snow;
     text-align: center;

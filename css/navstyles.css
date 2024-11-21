@@ -89,7 +89,7 @@ margin-left displays them to the right */
 }
 
 .active{
-    background-color: black;
+    background-color: rgb(67, 36, 36);
 }
 
 #dropdown-menu {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen iFrame</title>
+    <style>
+        /* Basic styles for the iframe and button */
+        iframe {
+            width: 600px;
+            height: 400px;
+        }
+        #fullscreenBtn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="myIframe" src="https://example.com" frameborder="0"></iframe>
+    <button id="fullscreenBtn">Fullscreen</button>
+
+    <script>
+        // JavaScript to handle the fullscreen functionality
+        document.getElementById('fullscreenBtn').addEventListener('click', function() {
+            var iframe = document.getElementById('myIframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>

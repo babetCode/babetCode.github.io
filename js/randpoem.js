@@ -36,7 +36,10 @@ async function fetchDailyPoem() {
         if (poem.author) {
             const authorElement = document.createElement('p');
             authorElement.classList.add('mt-4', 'text-gray-600', 'italic', 'text-right');
-            authorElement.textContent = `- ${poem.author}`;
+            // authorElement.textContent = `- ${poem.author}`;
+            authorElement.innerHTML = `- ${poem.author} <br><br>
+                <div class="text-center">This poem was randomly generated using 
+                <a href="https://poetrydb.org/index.html" class="underline" target="_blank">poetrydb.org</a></div>`;
             poemContainer.appendChild(authorElement);
         }
     } catch (error) {

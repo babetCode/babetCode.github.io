@@ -7,9 +7,11 @@
     <link rel="icon" href="images/Blogored.png" type="image/x-icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="js/games-init.js"></script>
 </head>
+
 <body class="bg-gray-100">
-    <!-- Navbar (Same as your original) -->
+    <!-- Navbar -->
     <nav class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -26,10 +28,10 @@
                 <!-- Navigation Links -->
                 <div class="flex items-center space-x-4">
                     <div class="relative group">
-                        <a href="html/tailprojects.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                        <a href="html/projects.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
                             Projects
                         </a>
-                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 z-10 
+                        <!-- <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 z-10 
                                     before:absolute before:top-[-20px] before:left-0 before:right-0 before:h-[20px]">
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
                                 IMU Analysis
@@ -40,30 +42,31 @@
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
                                 Biomechanics
                             </a>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="relative group">
-                        <a href="#" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                        <a href="html/work.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
                             Work
                         </a>
-                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 z-10 
+                        <!-- <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 z-10 
                                     before:absolute before:top-[-20px] before:left-0 before:right-0 before:h-[20px]">
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                                Snowsports
+                                Snowboard
                             </a>
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
                                 EMT
                             </a>
                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                                Teaching
+                                Teach
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </nav>
+
 
     <!-- Main Content (welcome) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
@@ -72,19 +75,20 @@
             <div class="flex justify-center">
                 <p class="text-gray-600">
                     This is a place where I keep some of the projects I'm working on.
-                    <br>As I continue to add to it, new projects will show in the "Projects" tab.
-                    <br>In the meantime, here's a javascript snake game.
+                    As I continue to add to it, new projects will show in the "Projects" tab.
+                    In the meantime, here's a javascript snake game and poem.
                 </p>
             </div>
         </div>
     </div>
 
+
     <!-- Main Content (snake) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
         <!-- Snake Game Section -->
         <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Snake Game</h2>
-            <p>Use arrow keys or WASD to control the snake</p>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Snake</h2>
+            <p>Use ←↑↓→ or WASD to control the snake</p>
             
             <!-- Game Canvas -->
             <canvas id="gameCanvas" 
@@ -112,157 +116,52 @@
         </div>
     </div>
 
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        const startButton = document.getElementById('startButton');
-        const resetButton = document.getElementById('resetButton');
-        const scoreDisplay = document.getElementById('scoreDisplay');
 
-        // Game variables
-        const gridSize = 20;
-        const tileCount = canvas.width / gridSize;
-        let snake, food, score, gameLoop;
+    <!-- Main Content (flappy bird) -->
+    <div class="container mx-auto mt-8 px-4 max-w-2xl">
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Flappy Bird</h2>
+            <p class="mb-4">Press SPACE or Click to make the bird fly</p>
+            
+            <!-- Game Canvas -->
+            <canvas id="gameCanvas" 
+                    width="400" 
+                    height="600" 
+                    class="border-4 border-blue-500 rounded-lg mb-4">
+            </canvas>
 
-        // Initialize game state
-        function initGame() {
-            snake = [
-                {x: 1, y: 10},  // Snake starts in the middle
-            ];
-            food = getRandomFood();
-            score = 0;
-            scoreDisplay.textContent = score;
-            direction = 'RIGHT';
-        }
+            <!-- Game Controls -->
+            <div class="flex space-x-4">
+                <button id="startButton" 
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                    Start Game
+                </button>
+                <button id="resetButton" 
+                        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                    Reset Game
+                </button>
+            </div>
 
-        // Generate random food position
-        function getRandomFood() {
-            return {
-                x: Math.floor(Math.random() * tileCount),
-                y: Math.floor(Math.random() * tileCount)
-            };
-        }
+            <!-- Score Display -->
+            <div class="mt-4 text-lg font-semibold">
+                Score: <span id="scoreDisplay">0</span>
+                <span class="ml-4">Best: <span id="bestScoreDisplay">0</span></span>
+            </div>
+        </div>
+    </div>
 
-        // Draw game elements
-        function drawGame() {
-            // Clear canvas
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Draw snake
-            ctx.fillStyle = 'black';
-            snake.forEach(segment => {
-                ctx.fillRect(
-                    segment.x * gridSize, 
-                    segment.y * gridSize, 
-                    gridSize - 2, 
-                    gridSize - 2
-                );
-            });
-
-            // Draw food
-            ctx.fillStyle = 'red';
-            ctx.fillRect(
-                food.x * gridSize, 
-                food.y * gridSize, 
-                gridSize - 2, 
-                gridSize - 2
-            );
-        }
-
-        // Movement logic
-        let direction = 'RIGHT';
-        function moveSnake() {
-            const head = {...snake[0]};
-
-            // Determine next position based on direction
-            switch(direction) {
-                case 'UP': head.y--; break;
-                case 'DOWN': head.y++; break;
-                case 'LEFT': head.x--; break;
-                case 'RIGHT': head.x++; break;
-            }
-
-            // Check for food collision
-            if (head.x === food.x && head.y === food.y) {
-                score++;
-                scoreDisplay.textContent = score;
-                food = getRandomFood();
-            } else {
-                snake.pop();
-            }
-
-            // Add new head
-            snake.unshift(head);
-
-            // Wall collision / self collision
-            if (
-                head.x < 0 || head.x >= tileCount ||
-                head.y < 0 || head.y >= tileCount ||
-                snake.slice(1).some(segment => 
-                    segment.x === head.x && segment.y === head.y)
-            ) {
-                clearInterval(gameLoop);
-                alert('Game Over! Your score: ' + score);
-            }
-        }
-
-        // Game update
-        function updateGame() {
-            moveSnake();
-            drawGame();
-        }
-
-        // Start game
-        startButton.addEventListener('click', () => {
-            if (gameLoop) clearInterval(gameLoop);
-            initGame();
-            gameLoop = setInterval(updateGame, 100);
-        });
-
-        // Reset game
-        resetButton.addEventListener('click', () => {
-            clearInterval(gameLoop);
-            initGame();
-        });
-
-        // Keyboard controls
-        document.addEventListener('keydown', (e) => {
-            switch(e.key.toLowerCase()) {
-                case 'arrowup': 
-                case 'w': 
-                    if (direction !== 'DOWN') direction = 'UP'; 
-                    break;
-                case 'arrowdown': 
-                case 's': 
-                    if (direction !== 'UP') direction = 'DOWN'; 
-                    break;
-                case 'arrowleft': 
-                case 'a': 
-                    if (direction !== 'RIGHT') direction = 'LEFT'; 
-                    break;
-                case 'arrowright': 
-                case 'd': 
-                    if (direction !== 'LEFT') direction = 'RIGHT'; 
-                    break;
-            }
-        });
-
-        // Initialize game on page load
-        initGame();
-    </script>
 
     <!-- Main Content (Poem of the Day) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
         <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Poem of the Day</h2>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">Poem</h2>
             <div id="poemContainer" class="text-gray-700">
                 <p class="italic">Loading poem...</p>
             </div>
         </div>
     </div>
-    
-    <script src="js/dailypoem.js" defer></script>
+    <script defer src="js/randpoem.js"></script>
+
 
     <!-- Footer -->
     <footer class="bg-white shadow-md mt-8">

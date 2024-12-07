@@ -8,8 +8,9 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100">
-    <!-- Navbar (Same as your original) -->
+    <!-- Navbar -->
     <nav class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -26,7 +27,7 @@
                 <!-- Navigation Links -->
                 <div class="flex items-center space-x-4">
                     <div class="relative group">
-                        <a href="html/tailprojects.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                        <a href="html/projects.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
                             Projects
                         </a>
                         <!-- <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 z-10 
@@ -44,7 +45,7 @@
                     </div>
 
                     <div class="relative group">
-                        <a href="html/tailwork.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                        <a href="html/work.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
                             Work
                         </a>
                         <!-- <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 z-10 
@@ -65,6 +66,7 @@
         </div>
     </nav>
 
+
     <!-- Main Content (welcome) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
         <div class="bg-white shadow-md rounded-lg p-6">
@@ -78,6 +80,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Main Content (snake) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
@@ -112,145 +115,8 @@
         </div>
     </div>
 
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        const startButton = document.getElementById('startButton');
-        const resetButton = document.getElementById('resetButton');
-        const scoreDisplay = document.getElementById('scoreDisplay');
+    <script defer src="js/snake.js"></script>
 
-        // Game variables
-        const gridSize = 20;
-        const tileCount = canvas.width / gridSize;
-        let snake, food, score, gameLoop;
-
-        // Initialize game state
-        function initGame() {
-            snake = [
-                {x: 1, y: 10},  // Snake starts in the middle
-            ];
-            food = getRandomFood();
-            score = 0;
-            scoreDisplay.textContent = score;
-            direction = 'RIGHT';
-        }
-
-        // Generate random food position
-        function getRandomFood() {
-            return {
-                x: Math.floor(Math.random() * tileCount),
-                y: Math.floor(Math.random() * tileCount)
-            };
-        }
-
-        // Draw game elements
-        function drawGame() {
-            // Clear canvas
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Draw snake
-            ctx.fillStyle = 'black';
-            snake.forEach(segment => {
-                ctx.fillRect(
-                    segment.x * gridSize, 
-                    segment.y * gridSize, 
-                    gridSize - 2, 
-                    gridSize - 2
-                );
-            });
-
-            // Draw food
-            ctx.fillStyle = 'red';
-            ctx.fillRect(
-                food.x * gridSize, 
-                food.y * gridSize, 
-                gridSize - 2, 
-                gridSize - 2
-            );
-        }
-
-        // Movement logic
-        let direction = 'RIGHT';
-        function moveSnake() {
-            const head = {...snake[0]};
-
-            // Determine next position based on direction
-            switch(direction) {
-                case 'UP': head.y--; break;
-                case 'DOWN': head.y++; break;
-                case 'LEFT': head.x--; break;
-                case 'RIGHT': head.x++; break;
-            }
-
-            // Check for food collision
-            if (head.x === food.x && head.y === food.y) {
-                score++;
-                scoreDisplay.textContent = score;
-                food = getRandomFood();
-            } else {
-                snake.pop();
-            }
-
-            // Add new head
-            snake.unshift(head);
-
-            // Wall collision / self collision
-            if (
-                head.x < 0 || head.x >= tileCount ||
-                head.y < 0 || head.y >= tileCount ||
-                snake.slice(1).some(segment => 
-                    segment.x === head.x && segment.y === head.y)
-            ) {
-                clearInterval(gameLoop);
-                alert('Game Over! Your score: ' + score);
-            }
-        }
-
-        // Game update
-        function updateGame() {
-            moveSnake();
-            drawGame();
-        }
-
-        // Start game
-        startButton.addEventListener('click', () => {
-            if (gameLoop) clearInterval(gameLoop);
-            initGame();
-            gameLoop = setInterval(updateGame, 100);
-        });
-
-        // Reset game
-        resetButton.addEventListener('click', () => {
-            clearInterval(gameLoop);
-            initGame();
-        });
-
-        // Keyboard controls
-        document.addEventListener('keydown', (e) => {
-            switch(e.key.toLowerCase()) {
-                case 'arrowup': 
-                case 'w': 
-                    if (direction !== 'DOWN') direction = 'UP'; 
-                    break;
-                case 'arrowdown': 
-                case 's': 
-                    if (direction !== 'UP') direction = 'DOWN'; 
-                    break;
-                case 'arrowleft': 
-                case 'a': 
-                    if (direction !== 'RIGHT') direction = 'LEFT'; 
-                    break;
-                case 'arrowright': 
-                case 'd': 
-                    if (direction !== 'LEFT') direction = 'RIGHT'; 
-                    break;
-            }
-        });
-
-        // Initialize game on page load
-        initGame();
-    </script>
 
     <!-- Main Content (Poem of the Day) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
@@ -262,59 +128,8 @@
         </div>
     </div>
     
-    <script>
-        async function fetchDailyPoem() {
-            const poemContainer = document.getElementById('poemContainer');
-            
-            try {
-                // Fetch a random poem with more robust error handling
-                const randomResponse = await fetch('https://poetrydb.org/random/1');
-                const poems = await randomResponse.json();
-                
-                // More thorough validation
-                if (!Array.isArray(poems) || poems.length === 0 || !poems[0].lines) {
-                    throw new Error('Invalid poem data');
-                }
-                
-                const poem = poems[0];
-                
-                // Clear previous loading message
-                poemContainer.innerHTML = '';
-                
-                // Create title if available
-                if (poem.title) {
-                    const titleElement = document.createElement('h3');
-                    titleElement.classList.add('text-xl', 'font-semibold', 'mb-3', 'text-gray-900');
-                    titleElement.textContent = poem.title;
-                    poemContainer.appendChild(titleElement);
-                }
-                
-                // Render poem lines
-                poem.lines.forEach(line => {
-                    const lineElement = document.createElement('p');
-                    lineElement.classList.add('mb-1');
-                    lineElement.textContent = line;
-                    poemContainer.appendChild(lineElement);
-                });
-                
-                // Add author information
-                if (poem.author) {
-                    const authorElement = document.createElement('p');
-                    authorElement.classList.add('mt-4', 'text-gray-600', 'italic', 'text-right');
-                    authorElement.textContent = `- ${poem.author}`;
-                    poemContainer.appendChild(authorElement);
-                }
-            } catch (error) {
-                console.error('Error fetching poem:', error);
-                poemContainer.innerHTML = `
-                    <p class="text-red-600">Unable to fetch poem. Please try again later.</p>
-                `;
-            }
-        }
-    
-        // Fetch poem when the page loads
-        document.addEventListener('DOMContentLoaded', fetchDailyPoem);
-    </script>
+    <script defer src="js/randpoem.js"></script>
+
 
     <!-- Footer -->
     <footer class="bg-white shadow-md mt-8">

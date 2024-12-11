@@ -9,31 +9,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-neutral-900">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md">
+    <nav class="bg-neutral-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="#" class="flex items-center">
+                    <a href="#" class="flex items-center group">
                         <img src="images/Blogored.png" 
                             alt="Logo" 
                             class="h-10 w-10 mr-3">
-                        <span class="text-2xl font-bold text-black-600">Babet's Site</span>
+                        <span class="text-2xl font-bold text-neutral-50
+                                group-hover:bg-gradient-to-r group-hover:from-amber-400 group-hover:via-amber-300
+                                group-hover:to-amber-400 group-hover:bg-clip-text group-hover:text-transparent">
+                            Babet's Site
+                        </span>
                     </a>
                 </div>
                 
                 <!-- Navigation Links -->
                 <div class="flex items-center space-x-4">
                     <div class="relative group">
-                        <a href="html/projects.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                        <a href="html/work.html" class="px-3 py-2 rounded-md text-neutral-50
+                                hover:bg-gradient-to-r hover:from-amber-400 hover:via-amber-300
+                                hover:to-amber-400 hover:bg-clip-text hover:text-transparent">
                             Projects
                         </a>
                     </div>
 
                     <div class="relative group">
-                        <a href="html/work.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                        <a href="html/work.html" class="px-3 py-2 rounded-md text-neutral-50
+                                hover:bg-gradient-to-r hover:from-amber-400 hover:via-amber-300
+                                hover:to-amber-400 hover:bg-clip-text hover:text-transparent">
                             Work
                         </a>
                     </div>
@@ -45,12 +53,12 @@
 
     <!-- Main Content (welcome) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h1 class="text-3xl font-bold mb-4 text-gray-800 text-center">Welcome to My Website</h1>
+        <div class="bg-neutral-800 shadow-md rounded-lg p-6">
+            <h1 class="text-3xl font-bold mb-4 text-center text-neutral-50">Welcome to My Website</h1>
             <div class="flex justify-center">
-                <p class="text-gray-600">
-                    I built this as a place to play around with HTML/JavaScript
-                    and keep some of the projects I'm working on.
+                <p class="text-neutral-50">
+                    I buiilt this as a place to play around with HTML and JavaScript
+                    as well as keep some of worksamples and projects I'm doing.
                     As I continue to add to it, new projects will show in the "Projects" tab.
                     In the meantime, here's a javascript snake game and poem.
                 </p>
@@ -62,27 +70,29 @@
     <!-- Main Content (snake) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
         <!-- Snake Game Section -->
-        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Snake</h2>
-            <p>Use ←↑↓→ or WASD to control the snake</p>
+        <div class="bg-neutral-800 shadow-md rounded-lg p-6 flex flex-col items-center">
+            <h2 class="text-2xl font-bold mb-4 text-neutral-50">Snake</h2>
+            <p class="text-neutral-50">Use ←↑↓→ or WASD to control the snake</p>
             
             <!-- Game Canvas -->
             <canvas id="gameCanvas" 
                     width="400" 
                     height="400" 
-                    class="border-4 border-indigo-500 rounded-lg mb-4">
+                    class="border-4 border-neutral-900 rounded-lg mb-4">
             </canvas>
 
             <!-- Game Controls -->
-            <div class="flex space-x-4">
+            <div class="bg-neutral-900 rounded">
                 <button id="startButton" 
-                        class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition">
+                class="text-white px-4 py-2 rounded
+                hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r
+                hover:from-amber-400 hover:via-amber-300 hover:to-amber-400">
                     Start Game
                 </button>
             </div>
 
             <!-- Score Display -->
-            <div class="mt-4 text-lg font-semibold">
+            <div class="mt-4 text-lg font-semibold text-neutral-50">
                 Score: <span id="scoreDisplay">0</span>
             </div>
         </div>
@@ -92,9 +102,9 @@
 
     <!-- Main Content (Poem of the Day) -->
     <div class="container mx-auto mt-8 px-4 max-w-2xl">
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">Poem</h2>
-            <div id="poemContainer" class="text-gray-700">
+        <div class="bg-red-600 shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gold-500 text-center">Poem</h2>
+            <div id="poemContainer" class="text-gold-500">
                 <p class="italic">Loading poem...</p>
             </div>
         </div>
@@ -103,13 +113,13 @@
 
 
     <!-- Footer -->
-    <footer class="bg-white shadow-md mt-8">
+    <footer class="bg-red-600 shadow-md mt-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <div class="text-gray-600">
+                <div class="text-gold-500">
                     <a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" target="_blank" class="underline">GPL-3.0 license</a>
                 </div>
-                <div class="text-gray-600">
+                <div class="text-gold-500">
                     Last updated Dec 2024 by Adrien Babet.
                 </div>
                 <div class="flex space-x-4">

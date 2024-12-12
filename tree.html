@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babet's Website</title>
+    <link rel="icon" href="images/Blogored.png" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <img src="images/Blogored.png" 
+                            alt="Logo" 
+                            class="h-10 w-10 mr-3">
+                        <span class="text-2xl font-bold text-black-600">Babet's Site</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative group">
+                        <a href="html/projects.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                            Projects
+                        </a>
+                    </div>
+
+                    <div class="relative group">
+                        <a href="html/work.html" class="text-gray-700 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md">
+                            Work
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content (welcome) -->
+    <div class="container mx-auto mt-8 px-4 max-w-2xl">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h1 class="text-3xl font-bold mb-4 text-gray-800 text-center">Welcome to My Website</h1>
+            <div class="flex justify-center">
+                <p class="text-gray-600">
+                    I built this as a place to play around with HTML/JavaScript
+                    and keep some of the projects I'm working on.
+                    As I continue to add to it, new projects will show in the "Projects" tab.
+                    In the meantime, here's a javascript snake game and poem.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Content (tree) -->
+    <div class="container mx-auto mt-8 px-4 max-w-2xl">
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <ul class="space-y-4">
+          <li>
+            <details open>
+              <summary class="flex items-center cursor-pointer relative focus:outline-none focus-visible:ring-2">
+                <div class="absolute w-4 h-4 bg-gray-300 rounded-full left-[-1.5rem] flex-shrink-0 flex items-center justify-center">
+                  <span class="w-2 h-2 bg-gray-600 rounded-full"></span>
+                </div>
+                <span class="ml-6">Giant planets</span>
+              </summary>
+              <ul class="pl-6 border-l-2 border-gray-300 mt-2 space-y-2">
+                <li>
+                  <details>
+                    <summary class="flex items-center cursor-pointer relative focus:outline-none focus-visible:ring-2">
+                      <div class="absolute w-4 h-4 bg-gray-300 rounded-full left-[-1.5rem] flex-shrink-0 flex items-center justify-center">
+                        <span class="w-2 h-2 bg-gray-600 rounded-full"></span>
+                      </div>
+                      <span class="ml-6">Gas giants</span>
+                    </summary>
+                    <ul class="pl-6 border-l-2 border-gray-300 mt-2 space-y-2">
+                      <li class="relative pl-6 before:absolute before:top-0 before:left-[-1.5rem] before:w-2 before:h-2 before:rounded-full before:bg-gray-400">
+                        Jupiter
+                      </li>
+                      <li class="relative pl-6 before:absolute before:top-0 before:left-[-1.5rem] before:w-2 before:h-2 before:rounded-full before:bg-gray-400">
+                        Saturn
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary class="flex items-center cursor-pointer relative focus:outline-none focus-visible:ring-2">
+                      <div class="absolute w-4 h-4 bg-gray-300 rounded-full left-[-1.5rem] flex-shrink-0 flex items-center justify-center">
+                        <span class="w-2 h-2 bg-gray-600 rounded-full"></span>
+                      </div>
+                      <span class="ml-6">Ice giants</span>
+                    </summary>
+                    <ul class="pl-6 border-l-2 border-gray-300 mt-2 space-y-2">
+                      <li class="relative pl-6 before:absolute before:top-0 before:left-[-1.5rem] before:w-2 before:h-2 before:rounded-full before:bg-gray-400">
+                        Uranus
+                      </li>
+                      <li class="relative pl-6 before:absolute before:top-0 before:left-[-1.5rem] before:w-2 before:h-2 before:rounded-full before:bg-gray-400">
+                        Neptune
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content (tree) -->
+    <div class="container mx-auto mt-8 px-4 max-w-2xl">
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <ul class="space-y-4">
+          <li>
+            <details open class="relative">
+              <summary class="pl-12">Giant planets</summary>
+              <ul class="ml-8 space-y-4">
+                <li>
+                  <details class="relative">
+                    <summary class="pl-12">Gas giants</summary>
+                    <ul class="ml-8 space-y-2">
+                      <li class="pl-6">Jupiter</li>
+                      <li class="pl-6">Saturn</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details class="relative">
+                    <summary class="pl-12">Ice giants</summary>
+                    <ul class="ml-8 space-y-2">
+                      <li class="pl-6">Uranus</li>
+                      <li class="pl-6">Neptune</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>        
+      </div>
+    </div>
+
+    <!-- Main Content (tree) -->
+    <div class="container mx-auto mt-8 px-4 max-w-2xl">
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <ul class="space-y-4">
+          <li class="relative">
+            <details open>
+              <summary class="pl-12">Giant planets</summary>
+              <ul class="ml-8 pl-4 space-y-4">
+                <li class="relative">
+                  <details>
+                    <summary class="pl-12">Gas giants</summary>
+                    <ul class="ml-8 pl-4 space-y-2">
+                      <li class="relative pl-6 before:absolute before:top-[-12px] before:left-[-8px] before:w-8 before:h-8">Jupiter</li>
+                      <li class="relative pl-6 before:absolute before:top-[-12px] before:left-[-8px] before:w-8 before:h-8">Saturn</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="relative">
+                  <details>
+                    <summary class="pl-12">Ice giants</summary>
+                    <ul class="ml-8 pl-4 space-y-2">
+                      <li class="relative pl-6 before:absolute before:top-[-12px] before:left-[-8px] before:w-8 before:h-8">Uranus</li>
+                      <li class="relative pl-6 before:absolute before:top-[-12px] before:left-[-8px] before:w-8 before:h-8">Neptune</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>                
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-gray-600">
+                    <a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" target="_blank" class="underline">GPL-3.0 license</a>
+                </div>
+                <div class="text-gray-600">
+                    Last updated Dec 2024 by Adrien Babet.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/babetCode" target="_blank">
+                        <img src="images/github.png" alt="github" class="h-6 w-6">
+                    </a>
+                    <a href="https://www.instagram.com/adrien.babet/?hl=en" target="_blank">
+                        <img src="images/instagram.png" alt="instagram" class="h-6 w-6">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

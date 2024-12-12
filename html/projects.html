@@ -78,7 +78,7 @@
     </div>
     <script src="../js/phdquiz.js"></script>
 
-    <!-- quiz -->
+    <!-- sounds link -->
     <div class="container max-w-7xl mx-auto mt-8 px-4">
         <div class="flex items-center justify-between p-4 bg-red-700 text-white rounded-t-lg">
             <h2 class="text-lg font-bold">sounds</h2>
@@ -87,7 +87,40 @@
             <a href="sounds.html" class="p-8 bg-slate-300 rounded-md">Beat Maker</a>
         </div>
         <div class="w-full h-2 bg-slate-300 rounded-b-lg"></div>
-    </div>    
+    </div>
+    
+    <!-- Beat Maker -->
+    <div class="container max-w-7xl mx-auto mt-8 px-4">
+        <div class="flex items-center justify-between p-4 bg-red-700 text-white rounded-t-lg">
+            <h2 class="text-lg font-bold">sounds</h2>
+        </div>
+        <div id="beat-maker" class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center space-x-4">
+                    <button id="play-pause" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        Play
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <button id="bpm-decrease" class="bg-gray-200 px-2 rounded">-</button>
+                        <span id="bpm-display">120 BPM</span>
+                        <button id="bpm-increase" class="bg-gray-200 px-2 rounded">+</button>
+                    </div>
+                </div>
+                <div class="text-xl font-bold text-blue-600">Beat Maker</div>
+            </div>
+            
+            <div id="sequencer-grid" class="space-y-4">
+                <!-- Grid will be dynamically generated -->
+            </div>
+        </div>
+
+        <div id="beat-maker" class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <div id="sequencer-grid" class="space-y-4">
+                <!-- Grid will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+    <script defer src="../js/beat-maker.js"></script>
 
     <!-- Footer -->
     <footer class="bg-white shadow-md mt-8">
